@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+  char c;
+
+  printf("Enter an uppercase letter: ");
+  scanf("%c", &c);
+
+  // Convert the uppercase letter to lowercase using bitwise operators
+  c = (c | 0x20);
+
+  printf("Lowercase letter: %c\n", c);
+
+  return 0;
+}
