@@ -1,0 +1,93 @@
+//Implement a list using array and develop functions to perform insertion, deletion and linear search operations.
+#include<stdio.h>
+#include<stdlib.h>
+#define maxsize 1000
+int list[maxsize],size;
+void Create() {
+int i;
+printf("Enter the size of the list: ");
+scanf("%d",&size);
+if(size>maxsize)
+printf("List Overflow!!!!");
+else
+{
+printf("Enter List Elements: \n");
+for(i=0;i<size;i++)
+scanf("%d",&list[i]);
+}
+}
+void Display() {
+if(size==0)
+printf("List is empty!!!\n");
+else {
+printf("List Elements are:");
+int i;
+for(i=0;i<size;i++)
+printf("%d\t",list[i]);
+}
+printf("\n");
+}
+void Insert() {
+if(size==0)
+printf("List is empty!!!\n");
+else {
+int pos,value,i;
+printf("Enter position where you want to insert new element:");
+scanf("%d",&pos);
+printf("Enter value to Insert:");
+scanf("%d",&value);
+if(pos>0 && pos<=size) {
+for(i=size;i>=pos;i--)
+list[i]=list[i-1];
+list[pos-1]=value;
+size++;
+printf("Element added!!!!\n");
+}
+else 
+printf("Invalid Position!!!!\n\n");
+}
+}
+void delete() {
+if(size==0)
+printf("List is empty!!!\n");
+else {
+int pos,i;
+printf("Enter position of the element you want to delete:");
+scanf("%d",&pos);
+if(pos>0 && pos<=size) {
+for(i=pos-1;i<size;i--)
+list[i]=list[i+1];
+size--;
+printf("Element deleted!!!!\n");
+}
+else 
+printf("Invalid Position!!!!\n\n");
+}
+}
+void Search() {
+if(size==0)
+printf("List is empty!!!");
+else {
+int val,i;
+printf("Enter value to search:");
+scanf("%d",&val);
+for(i=0;i<size;i++) {
+if(list[i]==val) {
+break;
+}
+}
+if(size==i)
+printf("Element not found!!!");
+else
+printf("Element found!!!!");
+}
+}
+int main() {
+Create():
+Insert():
+Display():
+delete():
+Display():
+Search():
+return 0;
+}
